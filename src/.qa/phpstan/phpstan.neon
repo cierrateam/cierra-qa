@@ -1,0 +1,26 @@
+includes:
+    - %currentWorkingDirectory%/vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    universalObjectCratesClasses:
+        - Illuminate\Database\Eloquent\Model
+
+    ignoreErrors:
+        - '#Unsafe usage of new static#'
+
+    excludes_analyse:
+        - *config/*.php
+        - *.blade.php
+        - *.migrations/
+        - *_ide_helper.php
+        - *_ide_helper_models.php
+        - *.phpstorm.meta.php
+        - %currentWorkingDirectory%/bin
+        - %currentWorkingDirectory%/vendor
+        - %currentWorkingDirectory%/storage
+        - %currentWorkingDirectory%/resources
+        - %currentWorkingDirectory%/public
+        - %currentWorkingDirectory%/.qa
+
+    checkMissingIterableValueType: false
+    reportUnmatchedIgnoredErrors: false
