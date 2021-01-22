@@ -1,0 +1,43 @@
+{
+  "name": "cierrateam/cierra-qa",
+  "description": "Cierra quality assurance (qa) tools",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lukas K.",
+      "email": "lukas@cierra.de"
+    }
+  ],
+  "require": {
+    "php": "^7.3",
+    "nunomaduro/larastan": "^0.6.12",
+    "slevomat/coding-standard": "^6.4.1",
+    "squizlabs/php_codesniffer": "^3.5.8"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.5"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Cierrateam\\CierraQa\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cierrateam\\CierraQa\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Cierrateam\\CierraQa\\CierraQaServiceProvider"
+      ]
+    }
+  }
+}
