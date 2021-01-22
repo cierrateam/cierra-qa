@@ -8,7 +8,7 @@ parameters:
     ignoreErrors:
         - '#Unsafe usage of new static#'
 
-    excludes_analyse:
+    excludePaths:
         - *config/*.php
         - *.blade.php
         - *.migrations/
