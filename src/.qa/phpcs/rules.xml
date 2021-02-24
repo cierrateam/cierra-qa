@@ -98,10 +98,20 @@
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint"/>
+        <properties>
+            <property name="enableNativeTypeHint" value="false"/>
+            <property name="enableMixedTypeHint" value="false"/>
+            <property name="enableUnionTypeHint" value="false"/>
+        </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint" phpcs-only="true">
+
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint"/>
     </rule>
+
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint" phpcs-only="true">
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint"/>
@@ -176,7 +186,11 @@
     <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" value="0" />
+        </properties>
+    </rule>
 
     <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
     <rule ref="SlevomatCodingStandard.Classes.ClassMemberSpacing" />
